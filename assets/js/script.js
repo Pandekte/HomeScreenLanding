@@ -28,12 +28,38 @@ function revealOnScroll() {
 
 /* Load Changelog via Fetch API */
 function loadChangelog() {
-  fetch('changelog.html')
-    .then(response => response.text())
-    .then(html => {
-      document.getElementById("changelog-container").innerHTML = html;
-    })
-    .catch(err => console.error('Failed to load changelog:', err));
+  // Get the container where the changelog is shown
+  const container = document.getElementById("changelog-container");
+
+  // If the container is empty, fetch the changelog HTML from changelog.html
+  if (container.innerHTML.trim() === "") {
+    fetch("changelog.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        return response.text();
+      })
+      .then(data => {
+        container.innerHTML = data;
+        // Ensure the container is visible after loading
+        container.style.display = "block";
+        // Optionally, change the button text (if desired)
+        document.querySelector("button[onclick='loadChangelog()']").textContent = "Hide Changelog";
+      })
+      .catch(error => {
+        console.error("Error loading changelog:", error);
+      });
+  } else {
+    // If content is already loaded, toggle its display
+    if (container.style.display === "none" || container.style.display === "") {
+      container.style.display = "block";
+      document.querySelector("button[onclick='loadChangelog()']").textContent = "Hide Changelog";
+    } else {
+      container.style.display = "none";
+      document.querySelector("button[onclick='loadChangelog()']").textContent = "View Changelog";
+    }
+  }
 }
 
 /* DOM Content Loaded Event */

@@ -149,6 +149,7 @@ strong {
   color: var(--clr-indigo);
 }
 
+
 /* 5) Layout Helpers */
 .container {
   max-width: 1200px;

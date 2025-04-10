@@ -23,12 +23,16 @@
 </head>
 <script src="https://cookiechimp.com/widget/nNDtPV2.js"></script>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MRTPSL6J');</script>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-MRTPSL6J');</script>
 <!-- End Google Tag Manager -->
+
 <body class="theme-default">
   <!-- Header -->
   <header>
@@ -110,7 +114,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <section class="scroll-section container reveal" style="text-align: center;">
     <h2>Latest Updates</h2>
     <p>Curious about what's new? Click below to view our recent changes:</p>
-    <button class="btn" onclick="loadChangelog()" style="margin-bottom: 1rem;">View Changelog</button>
+    <button id="changelog-btn" class="btn" onclick="loadChangelog()" style="margin-bottom: 1rem;">View
+      Changelog</button>
     <div id="changelog-container" style="max-width: 800px; margin: 0 auto; text-align: left;"></div>
   </section>
 
