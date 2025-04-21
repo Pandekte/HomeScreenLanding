@@ -28,45 +28,43 @@ function revealOnScroll() {
 
 /* Load Changelog via Fetch API */
 function loadChangelog() {
-  // Get the container where the changelog is shown
   const container = document.getElementById("changelog-container");
+  const btn = document.getElementById("changelog-button");
 
-  // If the container is empty, fetch the changelog HTML from changelog.html
-  if (container.innerHTML.trim() === "") {
+  // If never loaded, fetch and show
+  if (!container.dataset.loaded) {
     fetch("changelog.html")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
-        return response.text();
+      .then(resp => {
+        if (!resp.ok) throw new Error("Network response was not ok.");
+        return resp.text();
       })
-      .then(data => {
-        container.innerHTML = data;
-        // Ensure the container is visible after loading
+      .then(html => {
+        container.innerHTML = html;
         container.style.display = "block";
-        // Optionally, change the button text (if desired)
-        document.querySelector("button[onclick='loadChangelog()']").textContent = "Hide Changelog";
+        btn.textContent = "Hide Changelog";
+        container.dataset.loaded = "true";
       })
-      .catch(error => {
-        console.error("Error loading changelog:", error);
-      });
+      .catch(err => console.error("Error loading changelog:", err));
   } else {
-    // If content is already loaded, toggle its display
-    if (container.style.display === "none" || container.style.display === "") {
+    // Toggle already-loaded container
+    if (container.style.display === "none") {
       container.style.display = "block";
-      document.querySelector("button[onclick='loadChangelog()']").textContent = "Hide Changelog";
+      btn.textContent = "Hide Changelog";
     } else {
       container.style.display = "none";
-      document.querySelector("button[onclick='loadChangelog()']").textContent = "View Changelog";
+      btn.textContent = "View Changelog";
     }
   }
 }
 
-/* DOM Content Loaded Event */
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   updateFooterYear();
   revealOnScroll();
+  document
+    .getElementById("changelog-button")
+    .addEventListener("click", loadChangelog);
 });
+
 
 /* Scroll Event Listener */
 window.addEventListener("scroll", revealOnScroll);

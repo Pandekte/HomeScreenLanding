@@ -20,6 +20,8 @@
   <title>HomeScreen - Customizable New Tab Page</title>
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <script src="https://cookiechimp.com/widget/nNDtPV2.js"></script>
 <!-- Google Tag Manager -->
@@ -35,100 +37,233 @@
 
 <body class="theme-default">
   <!-- Header -->
-  <header>
-    <nav class="container" style="padding: 1rem; text-align: center;">
-      <strong>HomeScreen</strong> — A Better Browser Experience
+  <header class="main-header">
+    <nav class="container">
+      <div class="logo">
+        <i class="fas fa-home"></i>
+        <span>HomeScreen</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#why-choose">Why Choose</a>
+        <a href="#updates">Updates</a>
+        <a href="https://github.com/Pandekte/HomeScreenPublic" target="_blank" class="github-link">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="scroll-section container reveal" style="text-align: center;">
-    <h1 style="margin-bottom: 1rem;">Manage Your Browser with Ease!</h1>
-    <p style="max-width: 600px; margin: 0 auto;">
-      Power up your new tab with an intuitive <strong>Advanced Bookmark Manager</strong>,
-      integrated <strong>To-Do List</strong>, and a <strong>Privacy-Focused</strong> design.
-    </p>
-    <div style="margin-top: 1.5rem;">
-      <a href="https://chromewebstore.google.com/detail/new-tab-page-custom-home/dmdeigebfbjbndnnaheobifpfnkhlgbo"
-        class="btn" style="margin: 0 0.5rem;">Add to Chrome</a>
-      <a href="https://addons.mozilla.org/en-US/firefox/addon/homepage-new-tab-page/" class="btn"
-        style="margin: 0 0.5rem;">Add to Firefox</a>
+  <section class="hero-section scroll-section container reveal">
+    <div class="hero-content">
+      <h1>Transform Your Browser Experience</h1>
+      <p class="hero-subtitle">
+        Power up your new tab with an intuitive <strong>Advanced Bookmark Manager</strong>,
+        integrated <strong>To-Do List</strong>, and a <strong>Privacy-Focused</strong> design.
+      </p>
+      <div class="cta-buttons">
+        <a href="https://chromewebstore.google.com/detail/new-tab-page-custom-home/dmdeigebfbjbndnnaheobifpfnkhlgbo"
+          class="btn btn-primary">
+          <i class="fab fa-chrome"></i> Add to Chrome
+        </a>
+        <a href="https://addons.mozilla.org/en-US/firefox/addon/homepage-new-tab-page/" class="btn btn-secondary">
+          <i class="fab fa-firefox"></i> Add to Firefox
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="scroll-section container reveal" style="background-color: var(--clr-slate800); text-align: center;">
+  <section id="features" class="features-section scroll-section container reveal">
     <h2>Key Features</h2>
-    <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
-      <div style="max-width: 300px;">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-bookmark"></i>
+        </div>
         <h3>Advanced Bookmark Manager</h3>
         <p>
           Easily add, edit, organize, and access your essential websites with customizable folders.
         </p>
-        <img src="assets/images/feature1.png" alt="Advanced Bookmark Manager" style="margin-bottom: 1rem;" />
+        <img src="assets/images/feature1.png" alt="Advanced Bookmark Manager" class="feature-image" />
       </div>
-      <div style="max-width: 300px;">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-search"></i>
+        </div>
         <h3>Integrated Search</h3>
         <p>
           Quickly find bookmarks and folders with a search that scans both labels and URLs. Categorize and find using
           filters.
         </p>
-        <img src="assets/images/feature2.png" alt="Integrated Search" style="margin-bottom: 1rem;" />
+        <img src="assets/images/feature2.png" alt="Integrated Search" class="feature-image" />
       </div>
-      <div style="max-width: 300px;">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-tasks"></i>
+        </div>
         <h3>Minimalist To-Do List</h3>
         <p>
           Manage tasks efficiently—add, complete, and reorder them to boost your productivity.
         </p>
-        <img src="assets/images/feature3.png" alt="Minimalist To-Do List" style="margin-bottom: 1rem;" />
+        <img src="assets/images/feature3.png" alt="Minimalist To-Do List" class="feature-image" />
       </div>
     </div>
   </section>
 
   <!-- Why Choose HomeScreen Section -->
-  <section class="scroll-section container reveal" style="text-align: center;">
+  <section id="why-choose" class="why-choose-section scroll-section container reveal">
     <h2>Why Choose HomeScreen?</h2>
-    <ul style="max-width: 800px; list-style: none; padding-left: 0; margin: 0 auto;">
-      <li style="margin-bottom: 1rem;">
-        <strong>Complete Control & Privacy:</strong> Your data stays local.
-      </li>
-      <li style="margin-bottom: 1rem;">
-        <strong>Enhanced Productivity:</strong> Streamlined access to bookmarks and tasks.
-      </li>
-      <li style="margin-bottom: 1rem;">
-        <strong>User-Friendly Interface:</strong> Elegant design that adapts to your needs.
-      </li>
-      <li style="margin-bottom: 1rem;">
-        <strong>Export/Import Bookmarks:</strong> Easily manage your bookmarks with JSON support.
-      </li>
-    </ul>
-    <div style="margin-top: 1.5rem;">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Complete Control & Privacy</h3>
+        <p>Your data stays local and secure</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-rocket"></i>
+        <h3>Enhanced Productivity</h3>
+        <p>Streamlined access to bookmarks and tasks</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>User-Friendly Interface</h3>
+        <p>Elegant design that adapts to your needs</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fas fa-exchange-alt"></i>
+        <h3>Export/Import Bookmarks</h3>
+        <p>Easily manage your bookmarks with JSON support</p>
+      </div>
+    </div>
+    <div class="cta-buttons">
       <a href="https://chromewebstore.google.com/detail/new-tab-page-custom-home/dmdeigebfbjbndnnaheobifpfnkhlgbo"
-        class="btn" style="margin: 0 0.5rem;">Add to Chrome</a>
-      <a href="https://addons.mozilla.org/en-US/firefox/addon/homepage-new-tab-page/" class="btn"
-        style="margin: 0 0.5rem;">Add to Firefox</a>
+        class="btn btn-primary">
+        <i class="fab fa-chrome"></i> Add to Chrome
+      </a>
+      <a href="https://addons.mozilla.org/en-US/firefox/addon/homepage-new-tab-page/" class="btn btn-secondary">
+        <i class="fab fa-firefox"></i> Add to Firefox
+      </a>
     </div>
   </section>
 
   <!-- Latest Updates Section -->
-  <section class="scroll-section container reveal" style="text-align: center;">
+  <section id="updates" class="updates-section scroll-section container reveal">
     <h2>Latest Updates</h2>
-    <p>Curious about what's new? Click below to view our recent changes:</p>
-    <button id="changelog-btn" class="btn" onclick="loadChangelog()" style="margin-bottom: 1rem;">View
-      Changelog</button>
-    <div id="changelog-container" style="max-width: 800px; margin: 0 auto; text-align: left;"></div>
+    <p class="updates-subtitle">Stay informed about our latest improvements and features</p>
+    <button id="changelog-button" class="btn btn-outline">
+      <i class="fas fa-history"></i> View Changelog
+    </button>
+    <div id="changelog-container" class="changelog-list" style="display: none;">
+      <div class="changelog-version">
+        <div class="version-header">
+          <span class="version-number">v0.4.5.1</span>
+          <span class="version-date">April 2024</span>
+        </div>
+        <ul class="changes-list">
+          <li class="change-item">
+            <span class="change-type fixed">F</span>
+            <span class="change-description">Resolved bookmark editing issue in search mode by passing full bookmark objects</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type fixed">F</span>
+            <span class="change-description">Fixed deletion in search mode to retain search results after removal</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type improved">I</span>
+            <span class="change-description">Enhanced search result consistency post-edit or deletion</span>
+          </li>
+        </ul>
+      </div>
+      <div class="changelog-version">
+        <div class="version-header">
+          <span class="version-number">v0.4.5</span>
+          <span class="version-date">March 2024</span>
+        </div>
+        <ul class="changes-list">
+          <li class="change-item">
+            <span class="change-type added">A</span>
+            <span class="change-description">Export/Import support for bookmarks to/from Chrome/Firefox/other browser HTML export files</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type improved">I</span>
+            <span class="change-description">Updated instructions and UI for bookmark export/import</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type improved">I</span>
+            <span class="change-description">Minor UI enhancements</span>
+          </li>
+        </ul>
+      </div>
+      <div class="changelog-version">
+        <div class="version-header">
+          <span class="version-number">v0.4.4.2</span>
+          <span class="version-date">February 2024</span>
+        </div>
+        <ul class="changes-list">
+          <li class="change-item">
+            <span class="change-type added">A</span>
+            <span class="change-description">Settings modal with organized tabs</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type added">A</span>
+            <span class="change-description">Toggle for URL tooltip</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type improved">I</span>
+            <span class="change-description">Enhanced favicon fetching with secure methods and improved fallback</span>
+          </li>
+          <li class="change-item">
+            <span class="change-type improved">I</span>
+            <span class="change-description">Standardized export file format and added notifications</span>
+          </li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer style="background-color: var(--clr-slate800); padding: 1rem; text-align: center; margin-top: 2rem;">
-    <p>
-      &copy; <span id="year"></span> HomeScreen |
-      <a href="https://github.com/Pandekte/HomeScreenPublic" target="_blank">GitHub Repository</a>
-    </p>
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <i class="fas fa-home"></i>
+          <span>HomeScreen</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/Pandekte/HomeScreenPublic" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://pandekte.github.io/HomeScreenLanding/changelog.html">
+            <i class="fas fa-history"></i> Changelog
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> HomeScreen. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
   <!-- Main JavaScript -->
   <script src="assets/js/script.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const changelogButton = document.getElementById('changelog-button');
+      const changelogContainer = document.getElementById('changelog-container');
+      
+      changelogButton.addEventListener('click', function() {
+        if (changelogContainer.style.display === 'none') {
+          changelogContainer.style.display = 'block';
+          changelogButton.innerHTML = '<i class="fas fa-times"></i> Close Changelog';
+        } else {
+          changelogContainer.style.display = 'none';
+          changelogButton.innerHTML = '<i class="fas fa-history"></i> View Changelog';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
