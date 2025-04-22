@@ -254,7 +254,10 @@
       const changelogContainer = document.getElementById('changelog-container');
       
       changelogButton.addEventListener('click', function() {
-        if (changelogContainer.style.display === 'none') {
+        const isHidden = changelogContainer.style.display === 'none' || 
+                        window.getComputedStyle(changelogContainer).display === 'none';
+        
+        if (isHidden) {
           changelogContainer.style.display = 'block';
           changelogButton.innerHTML = '<i class="fas fa-times"></i> Close Changelog';
         } else {
