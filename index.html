@@ -155,7 +155,7 @@
     <button id="changelog-button" class="btn btn-outline">
       <i class="fas fa-history"></i> View Changelog
     </button>
-    <div id="changelog-container" class="changelog-list" style="display: none;">
+    <div id="changelog-container" class="changelog-list changelog-hidden">
       <div class="changelog-version">
         <div class="version-header">
           <span class="version-number">v0.4.5.1</span>
@@ -253,18 +253,58 @@
       const changelogButton = document.getElementById('changelog-button');
       const changelogContainer = document.getElementById('changelog-container');
       
-      changelogButton.addEventListener('click', function() {
-        const isHidden = changelogContainer.style.display === 'none' || 
-                        window.getComputedStyle(changelogContainer).display === 'none';
-        
-        if (isHidden) {
-          changelogContainer.style.display = 'block';
-          changelogButton.innerHTML = '<i class="fas fa-times"></i> Close Changelog';
-        } else {
-          changelogContainer.style.display = 'none';
-          changelogButton.innerHTML = '<i class="fas fa-history"></i> View Changelog';
-        }
+      if (changelogButton && changelogContainer) { // Ensure elements exist
+        changelogButton.addEventListener('click', function() {
+          const isHidden = changelogContainer.classList.contains('changelog-hidden');
+          
+          if (isHidden) {
+            changelogContainer.classList.remove('changelog-hidden');
+            changelogButton.innerHTML = '<i class="fas fa-times"></i> Close Changelog';
+          } else {
+            changelogContainer.classList.add('changelog-hidden');
+            changelogButton.innerHTML = '<i class="fas fa-history"></i> View Changelog';
+          }
+        });
+      } else {
+        console.error('Changelog button or container not found!');
+      }
+
+      // Optional: Add smooth scroll for nav links if not already present
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
       });
+
+      // Update footer year (if not already in script.js)
+      const yearSpan = document.getElementById('year');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Reveal on scroll (if not already in script.js)
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealOnScroll = () => {
+        const windowHeight = window.innerHeight;
+        revealElements.forEach(el => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) { // Adjust offset as needed
+            el.classList.add('active');
+          } else {
+            el.classList.remove('active'); // Optional: remove if you want animation only once
+          }
+        });
+      };
+
+      window.addEventListener('scroll', revealOnScroll);
+      revealOnScroll(); // Initial check
+
     });
   </script>
 </body>
