@@ -43,7 +43,6 @@ svg {
   display: block;
   max-width: 100%;
   user-select: none;
-  vertical-align: middle;
 }
 
 a {
@@ -548,7 +547,6 @@ button {
 .change-type {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   width: 24px;
   height: 24px;
   border-radius: 50%;
