@@ -289,15 +289,15 @@ button {
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-xl);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
 }
 
 .feature-card {
   background-color: var(--clr-background);
-  margin: var(--spacing-md);
-  padding: var(--spacing-lg);
+  margin: var(--spacing-sm);
+  padding: var(--spacing-sm);
   border-radius: var(--radius-lg);
   transition: transform var(--transition-normal);
 }
