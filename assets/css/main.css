@@ -574,3 +574,31 @@ button {
   color: var(--clr-text-secondary);
   line-height: 1.5;
 }
+
+.version-list {
+  /* Always show vertical scrollbar when needed */
+  overflow-y: auto;
+  max-height: 400px; /* Adjust as needed */
+  
+  /* Firefox */
+  scrollbar-width: thin;                  /* "auto" or "thin" */
+  scrollbar-color: #475569 #20283a;       /* thumb color, track color */
+}
+
+/* Chrome, Edge, Safari */
+.version-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.version-list::-webkit-scrollbar-track {
+  background: #20283a;
+}
+
+.version-list::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+
+.version-list::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
