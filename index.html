@@ -50,9 +50,6 @@
         <a href="https://github.com/Pandekte/HomeScreenPublic" target="_blank" class="github-link">
           <i class="fab fa-github"></i>
         </a>
-        <button id="theme-toggle" class="theme-toggle-btn" title="Toggle theme">
-          <i class="fas fa-sun"></i> <!-- Default icon -->
-        </button>
       </div>
     </nav>
   </header>
@@ -262,11 +259,9 @@
           
           if (isHidden) {
             changelogContainer.classList.remove('changelog-hidden');
-            changelogContainer.classList.add('changelog-visible');
             changelogButton.innerHTML = '<i class="fas fa-times"></i> Close Changelog';
           } else {
             changelogContainer.classList.add('changelog-hidden');
-            changelogContainer.classList.remove('changelog-visible');
             changelogButton.innerHTML = '<i class="fas fa-history"></i> View Changelog';
           }
         });
