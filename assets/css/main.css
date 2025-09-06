@@ -585,6 +585,12 @@ button {
   scrollbar-color: #475569 #20283a;       /* thumb color, track color */
 }
 
+/* On dedicated changelog page, let the list grow to fit content */
+.changelog-page .version-list {
+  max-height: none;
+  overflow: visible;
+}
+
 /* Chrome, Edge, Safari */
 .version-list::-webkit-scrollbar {
   width: 8px;
